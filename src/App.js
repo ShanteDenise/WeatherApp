@@ -8,6 +8,15 @@ const API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`;
 
 
 class App extends React.Component{
+    state = {
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        description: undefined,
+        icon: undefined,
+        error: undefined
+    }
     getWeather = async (e) => {
         e.preventDefault();
         const city = e.target.elements.city.value
@@ -18,6 +27,18 @@ class App extends React.Component{
         //Convert the api data to Json format to a readable format
         const data = await api_call.json();
         console.log(data)
+        this.setState({
+            temperature: data.main.temp,
+            city: data.name,
+            country: data.sys.country,
+            humidity: data.main.humidity,
+            description: data.weather[0].description,
+            icon: data.weather[0].icon,
+            error: ""
+
+
+        })
+
     }
     render() {
         return (
