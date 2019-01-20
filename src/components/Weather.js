@@ -1,13 +1,13 @@
 import React from 'react'
 
-class Form extends React.Component {
+class Weather extends React.Component {
   render() {
     return (
       <div>
-        <p>Form Component</p>
+        <p>Weather </p>
       </div>
     )
   }
 }
 
-export default Form;
+export default Weather;
