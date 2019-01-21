@@ -12,7 +12,8 @@ class Weather extends React.Component {
               }
           { 
               this.props.temperature && <p className="weather__key">Temperature: 
-              <span className="weather__value"> {this.props.temperature}</span>
+              <span className="weather__value"> {this.props.temperature}F</span>
+
                </p>
               }
           { 
@@ -21,8 +22,9 @@ class Weather extends React.Component {
               </p>
               }
           {
-              this.props.description && <p className="weather__key">Description:
+              this.props.description && this.props.icon && <p className="weather__key">Description:
               <span className="weather__value"> {this.props.description}
+              <img className="weather__icon" src = {`http://openweathermap.org/img/w/${this.props.icon}.png`} alt="weather_icon"/>
               </span>
               </p>
               }

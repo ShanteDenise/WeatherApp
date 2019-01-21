@@ -22,10 +22,11 @@ class App extends React.Component {
 
         var country = e.target.elements.country.value;
 
-        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`)
+        const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}&units=imperial`)
         //Convert the api data to Json format to a readable format
         const data = await api_call.json();
         // If the city and country exists than run the code
+        console.log(data)
         if (data.cod === '404') {
             this.setState({
                 error: 'Invalid Entry (Not Found)'
@@ -38,6 +39,7 @@ class App extends React.Component {
                 country: data.sys.country,
                 humidity: data.main.humidity,
                 description: data.weather[0].description,
+                icon: data.weather[0].icon,
                 error: null
             })
         }
@@ -62,6 +64,7 @@ class App extends React.Component {
                     city={this.state.city}
                     country={this.state.country}
                     description={this.state.description}
+                    icon={this.state.icon}
                     error={this.state.error}
                   />
                 </div>
