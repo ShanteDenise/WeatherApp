@@ -18,9 +18,9 @@ class App extends React.Component {
     }
     getWeather = async (e) => {
         e.preventDefault();
-        const city = e.target.elements.city.value
+        let city = e.target.elements.city.value
 
-        var country = e.target.elements.country.value;
+        let country = e.target.elements.country.value;
 
         const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}&units=imperial`)
         //Convert the api data to Json format to a readable format
