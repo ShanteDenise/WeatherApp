@@ -25,7 +25,7 @@ class App extends React.Component {
         const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}&units=imperial`)
         //Convert the api data to Json format to a readable format
         const data = await api_call.json();
-        // If the city and country exists than run the code
+        // If the error code is 404, set State to error message else if the city and country exists run the code 
         console.log(data)
         if (data.cod === '404') {
             this.setState({
