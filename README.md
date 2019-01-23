@@ -13,6 +13,8 @@ Photo of App
 
 Technologies Used:
 ----
-#React
-#Bootstrap
-#OpenWeatherApp Api
+*React
+
+*Bootstrap
+
+*OpenWeatherApp Api
