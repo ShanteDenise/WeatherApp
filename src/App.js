@@ -26,7 +26,7 @@ class App extends React.Component {
         //Convert the api data to Json format to a readable format
         const data = await api_call.json();
         // If the error code is 404, set State to error message else if the city and country exists run the code 
-        console.log(data)
+    
         if (data.cod === '404') {
             this.setState({
                 error: 'Invalid Entry (Not Found)'
